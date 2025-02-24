@@ -1,0 +1,39 @@
+﻿<Page x:Class="WpfApp1.Buttons_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Buttons_Page">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel>
+            <Button Content="Aqua" FontSize="14" Foreground="Aqua"/>
+            <Button Content="Blue" FontSize="14" Foreground="Blue"/>
+            <Button Content="Chocolate" FontSize="14" Foreground="Chocolate"/>
+            <Button Content="DarkKhaki" FontSize="14" Foreground="DarkKhaki"/>
+            <Button Content="DarkViolet" FontSize="14" Foreground="DarkViolet"/>
+            <Button Content="Firebrick" FontSize="14" Foreground="Firebrick"/>
+            <Button Content="ForestGreen" FontSize="14" Foreground="ForestGreen"/>
+            <Button Content="Gold" FontSize="14" Foreground="Gold"/>
+            <Button Content="Green" FontSize="14" Foreground="Green"/>
+            <Button Content="Honeydew" FontSize="14" Foreground="Honeydew"/>
+            <Button Content="Indigo" FontSize="14" Foreground="Indigo"/>
+            <Button Content="Lavender" FontSize="14" Foreground="Lavender"/>
+            <Button Content="LemonChiffon" FontSize="14" Foreground="LemonChiffon"/>
+            <Button Content="LightCoral" FontSize="14" Foreground="LightCoral"/>
+            <Button Content="LightGreen" FontSize="14" Foreground="LightGreen"/>
+            <Button Content="Lime" FontSize="14" Foreground="Lime"/>
+            <Button Content="Magenta" FontSize="14" Foreground="Magenta"/>
+            <Button Content="MediumOrchid" FontSize="14" Foreground="MediumOrchid"/>
+            <Button Content="Navy" FontSize="14" Foreground="Navy"/>
+            <Button Content="Olive" FontSize="14" Foreground="Olive"/>
+        </WrapPanel>
+    </Grid>
+</Page>

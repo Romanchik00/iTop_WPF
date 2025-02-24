@@ -6,7 +6,11 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel LastChildFill="True">
+        <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center">
+            <Button Name="Buttons" Content="Buttons" FontSize="18" Margin="5" Click="Buttons_Click"/>
+            <Button Name="Calculator" Content="Calculator" FontSize="16" Margin="5" Click="Calculator_Click"/>
+        </WrapPanel>
+        <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
+    </DockPanel>
 </Window>
