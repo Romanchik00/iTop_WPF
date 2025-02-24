@@ -1,0 +1,129 @@
+﻿<Page x:Class="WpfApp1.Calculator_Page"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Calculator_Page">
+    <Grid VerticalAlignment="Stretch" Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+        <TextBox Name="TextFunc" Height="40" IsReadOnly="True" Grid.Row="0" FontSize="22" Foreground="DarkGray"/>
+        <TextBox Name="TextResult" Height="50" IsReadOnly="True" Grid.Row="1" FontSize="28"/>
+        <Grid VerticalAlignment="Stretch" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Margin="2" Click="ClearEntryButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="CE" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="1" Margin="2" Click="ClearButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="C" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="2" Margin="2" Click="BeckSpaceButton_Click">
+                <Viewbox Stretch="Uniform">
+                <TextBlock Text="&lt;" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Column="3" Margin="2" Click="SigilButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text=" / " FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="1" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="7" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="1" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="8" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="9" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="3" Margin="2" Click="SigilButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text=" * " FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="0" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="4" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="1" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="5" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="6" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="3" Margin="2" Click="SigilButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text=" - " FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="0" Margin="2" Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="1" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="1" Margin="2"  Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="2" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="2" Margin="2"  Click="NumbButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="3" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="3" Margin="2" Click="SigilButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text=" + " FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="4" Grid.Column="0" Margin="2"  Click="DotButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="." FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="4" Grid.Column="1" Margin="2"  Click="ZeroButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="0" FontSize="12"/>
+                </Viewbox>
+            </Button>
+            <Button Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Margin="2" Click="GetResultButton_Click">
+                <Viewbox Stretch="Uniform">
+                    <TextBlock Text="=" FontSize="12"/>
+                </Viewbox>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>

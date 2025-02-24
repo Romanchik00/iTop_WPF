@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Buttons_Page.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Buttons_Page : Page
     {
-        public MainWindow()
+        public Buttons_Page()
         {
             InitializeComponent();
-        }
-
-        private void Buttons_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new Uri("Buttons_Page.xaml",UriKind.Relative));
-        }
-
-        private void Calculator_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new Uri("Calculator_Page.xaml", UriKind.Relative));
         }
     }
 }
