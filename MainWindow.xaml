@@ -5,8 +5,259 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="610" Width="800">
+    <Grid Background="Magenta">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="1">
+            <Border x:Name="MyShowBord" BorderBrush="Black" BorderThickness="2" CornerRadius="10" Background="Beige" DockPanel.Dock="Top">
+                <TextBlock 
+                    x:Name="OutText" 
+                    Height="70" 
+                    FontSize="40" FontFamily="Segoe UI"
+                    TextAlignment="Center" VerticalAlignment="Center" > Какой-то текст</TextBlock>
+            </Border>
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <StackPanel>
+                    <GroupBox 
+                        Header="Цвет фона"
+                        FontWeight="Bold" FontSize="18"
+                        BorderBrush="Black" BorderThickness="2">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="A:"/>
+                                <Slider x:Name="SliderA" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="BackgroundSlider_ValueChanged"/>
+                                <Label x:Name="SlACount" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="R:"/>
+                                <Slider x:Name="SliderR" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="BackgroundSlider_ValueChanged"/>
+                                <Label x:Name="SlRCount" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="G:"/>
+                                <Slider x:Name="SliderG" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="BackgroundSlider_ValueChanged"/>
+                                <Label x:Name="SlGCount" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="B:"/>
+                                <Slider x:Name="SliderB" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="BackgroundSlider_ValueChanged"/>
+                                <Label x:Name="SlBCount" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="HEX:"/>
+                                <TextBox x:Name="HexColorBox" Grid.Column="1"/>
+                                <Button Content="+" Grid.Column="2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Width="17" Click="AddHexColorButton_Click"/>
+                                <ComboBox x:Name="ColorBox" Grid.Column="4" SelectionChanged="ComboBox_SelectionChanged">
+                                    <ComboBoxItem>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Background="Red" Content="     "/>
+                                            <Label Grid.Column="1" Content="Red"/>
+                                        </Grid>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Background="Green" Content="     "/>
+                                            <Label Grid.Column="1" Content="Green"/>
+                                        </Grid>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Background="Blue" Content="     "/>
+                                            <Label Grid.Column="1" Content="Blue"/>
+                                        </Grid>
+                                    </ComboBoxItem>
+                                    <ComboBoxItem>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Background="White" Content="     "/>
+                                            <Label Grid.Column="1" Content="White"/>
+                                        </Grid>
+                                    </ComboBoxItem>
+                                </ComboBox>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox  
+                        Header="Шрифт" 
+                        FontWeight="Bold" FontSize="18"
+                        BorderBrush="Black" BorderThickness="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="10*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="13*"/>
+                                <ColumnDefinition Width="13*"/>
+                            </Grid.ColumnDefinitions>
+                            <Button FontFamily="Arial" Content="Arial" Margin="3,3,3,3" Grid.ColumnSpan="2" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Column="2" FontFamily="Comics" Content="Comics" Margin="3,3,3,3" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Column="3" FontFamily="Times New Roman" Content="Times New Roman" Margin="3,3,3,3" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Column="4" FontFamily="GothicE" Content="GothicE" Margin="3,3,3,3" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Row="1" FontFamily="Courier New" Content="Courier New" Margin="3,3,3,3" Grid.ColumnSpan="2" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Row="1" Grid.Column="2" FontFamily="Courier" Content="Courier" Margin="3,3,3,3" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Row="1" Grid.Column="3" FontFamily="Georgia" Content="Georgia" Margin="3,3,3,3" Click="FontFamilyButton_Click"/>
+                            <Button Grid.Row="1" Grid.Column="4" FontFamily="Garamond" Content="Garamond" Margin="3,3,3,3" Click="FontFamilyButton_Click"/>
+                        </Grid>
+                    </GroupBox>
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Размер текста:" FontSize="18" FontWeight="Bold"/>
+                        <Slider Grid.Column="1" x:Name="TextSize" VerticalAlignment="Center"  Value="40" IsSnapToTickEnabled="True" Minimum="5" Maximum="65" ValueChanged="TextSize_ValueChanged"/>
+                        <TextBlock x:Name="SliderValue" Grid.Row="1" Grid.ColumnSpan="2" Text="40" TextAlignment="Center"/>
+                    </Grid>
+                    <GroupBox  
+                        Header="Стиль теста" 
+                        FontWeight="Bold" FontSize="18"
+                        BorderBrush="Black" BorderThickness="2">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Button Grid.Row="0" Grid.Column="0" Content="Bold" FontWeight="Bold" Grid.ColumnSpan="2" Height="28" Margin="0,0,174,0" Grid.RowSpan="2" VerticalAlignment="Top" Click="FontWeightButton_Click"/>
+                            <Button Grid.Row="0" Grid.Column="1" Content="Medium" FontWeight="Medium" Click="FontWeightButton_Click"/>
+                            <Button Grid.Row="0" Grid.Column="2" Content="Light" FontWeight="Light" Click="FontWeightButton_Click"/>
+                            <Button Grid.Row="1" Grid.Column="0" Content="Normal" FontStyle="Normal" Click="FontStyleButton_Click"/>
+                            <Button Grid.Row="1" Grid.Column="1" Content="Italic" FontStyle="Italic" Click="FontStyleButton_Click"/>
+                            <Button Grid.Row="1" Grid.Column="2" Content="Oblique" FontStyle="Oblique" Click="FontStyleButton_Click"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox  
+                        Header="Цвет текста" 
+                        FontWeight="Bold" FontSize="18"
+                        BorderBrush="Black" BorderThickness="2">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="27*"/>
+                                    <ColumnDefinition Width="34*"/>
+                                    <ColumnDefinition Width="460*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="A:" Margin="0,0,0,26" Grid.RowSpan="2"/>
+                                <Slider x:Name="SliderA2" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" Grid.ColumnSpan="3" Margin="27,0,0,0" ValueChanged="ForegroungSlider_ValueChanged"/>
+                                <Label x:Name="SlA2Count" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="2" Content="0" HorizontalAlignment="Left" Margin="205,0,0,0"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="R:"/>
+                                <Slider x:Name="SliderR2" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="ForegroungSlider_ValueChanged"/>
+                                <Label x:Name="SlR2Count" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="G:"/>
+                                <Slider x:Name="SliderG2" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="ForegroungSlider_ValueChanged"/>
+                                <Label x:Name="SlG2Count" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="9*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Content="B:"/>
+                                <Slider x:Name="SliderB2" Grid.Column="1" VerticalAlignment="Center" Value="0" IsSnapToTickEnabled="True" Minimum="0" Maximum="255" ValueChanged="ForegroungSlider_ValueChanged"/>
+                                <Label x:Name="SlB2Count" FontSize="12" FontWeight="Medium" Grid.Row="1" Grid.Column="1" Content="0" HorizontalAlignment="Center"/>
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
     </Grid>
 </Window>
