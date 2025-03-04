@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1RomRom
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -26,3 +26,4 @@ namespace WpfApp1
         }
     }
 }
+
