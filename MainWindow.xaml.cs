@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace WpfApp1RomRom
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -25,12 +25,20 @@ namespace WpfApp1
             InitializeComponent();
         }
 
+        //private void EyeFocusButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ((RadialGradientBrush)LabelEE.Background).GradientOrigin = new Point(0.3, 0.5);
+        //    ((RadialGradientBrush)LabelWW.Background).GradientOrigin = new Point(0.7, 0.5);
+        //    ((RadialGradientBrush)LabelSS.Background).GradientOrigin = new Point(0.5, 0.3);
+        //    ((RadialGradientBrush)LabelNN.Background).GradientOrigin = new Point(0.5, 0.7);
+        //}
+
         private void FontFamilyButton_Click(object sender, RoutedEventArgs e)
         {
             OutText.FontFamily = ((Button)sender).FontFamily;
             if (FontFamily.Source != "GothicE")
             {
-                OutText.Padding = new Thickness(0,5,0,0);
+                OutText.Padding = new Thickness(0, 5, 0, 0);
             }
         }
 
@@ -47,7 +55,7 @@ namespace WpfApp1
         private void TextSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             OutText.FontSize = ((Slider)sender).Value;
-            if(SliderValue != null)
+            if (SliderValue != null)
                 SliderValue.Text = ((Slider)sender).Value.ToString();
         }
 
@@ -71,26 +79,30 @@ namespace WpfApp1
                 default:
                     break;
             }
+            HexColorBox.Text = $"#{((SolidColorBrush)MyShowBord.Background).Color.A:X2}{((SolidColorBrush)MyShowBord.Background).Color.R:X2}{((SolidColorBrush)MyShowBord.Background).Color.G:X2}{((SolidColorBrush)MyShowBord.Background).Color.B:X2}";
         }
 
         private void AddHexColorButton_Click(object sender, RoutedEventArgs e)
         {
-            if(HexColorBox.Text.First() != '#')
+            if (HexColorBox.Text.First() != '#')
             {
                 HexColorBox.Text = "";
                 return;
             }
-            if(HexColorBox.Text.Length > 9 || HexColorBox.Text.Length < 6)
+            if (HexColorBox.Text.Length > 9 || HexColorBox.Text.Length < 6)
             {
                 HexColorBox.Text = "error";
                 return;
             }
             MyShowBord.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(HexColorBox.Text));
+            HexColorBox.Text = $"#{((SolidColorBrush)MyShowBord.Background).Color.A:X2}{((SolidColorBrush)MyShowBord.Background).Color.R:X2}{((SolidColorBrush)MyShowBord.Background).Color.G:X2}{((SolidColorBrush)MyShowBord.Background).Color.B:X2}";
+
         }
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             MyShowBord.Background = (((ColorBox.SelectedItem as ComboBoxItem).Content as Grid).Children[0] as Label).Background;
+            HexColorBox.Text = $"#{((SolidColorBrush)MyShowBord.Background).Color.A:X2}{((SolidColorBrush)MyShowBord.Background).Color.R:X2}{((SolidColorBrush)MyShowBord.Background).Color.G:X2}{((SolidColorBrush)MyShowBord.Background).Color.B:X2}";
         }
 
         private void ForegroungSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -116,3 +128,4 @@ namespace WpfApp1
         }
     }
 }
+
